@@ -13,13 +13,21 @@ export default class App extends Component {
   constructor(props){ 
     super(props); 
     this.state = {
-      user: currentUser,
+      user: {
+        firstName:'anon', 
+        lastName:'anon'
+      },
     };
   }
+  load = () => {
+    this.setState({user: currentUser});
+  }
   render() {
-    const {user} = this.state;
     return (
-      <Greeting user={user}/>
+      <>
+        <button onClick={this.load}>load user</button>
+        <Greeting user={this.state.user}/>
+      </>
     );
   }
 }
