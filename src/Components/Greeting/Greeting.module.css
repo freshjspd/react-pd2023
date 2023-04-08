@@ -13,3 +13,17 @@
     height: 200px;
     /*background-color: yellow;*/
 }
+
+.dayTheme{
+    width: 400px;
+    height: 200px;
+    color: black;
+    background-color: aqua;
+}
+
+.nightTheme{
+    width: 400px;
+    height: 200px;
+    color: white;
+    background-color: black;
+}

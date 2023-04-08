@@ -1,6 +1,18 @@
 import './App.css';
-import Water from './Components/Water'
 import React, { Component } from 'react'
+import Greeting from './Components/Greeting';
+
+const users = [
+{
+  firstName: 'Tom',
+  lastName: 'Tomson'
+},
+{
+  firstName: 'Kate',
+  lastName: 'Tomson'
+},
+];
+
 
 export default class App extends Component {
   constructor(props){ 
@@ -9,9 +21,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Water temperature={60}/>
-        <Water temperature={-5}/>
-        <Water temperature={100}/>
+        <Greeting user={users[0]} isHello={false}/>
+        <Greeting user={users[1]} isHello={true}/>
       </>
     );
   }
