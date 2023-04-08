@@ -16,12 +16,12 @@ export class ProductCard extends Component {
     const {imgSrc, name, price} = this.props.product;
     const selectedStyle = this.state.isSelected ? styles.selectedCard : null;
     return (
-        <div className={[styles.card, selectedStyle]} onClick={this.select}>
+        <div className={`${styles.card} ${selectedStyle}`} onClick={this.select}>
             <div className={styles.imgContainer}>
                 <img src={imgSrc} alt='product'/>
-                <p>{name}</p>
-                <p>{price}</p>
             </div>
+            <p>Product: {name}</p>
+            <p> , price: {price}</p>
         </div>
     )
   }
