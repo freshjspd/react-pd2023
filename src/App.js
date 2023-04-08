@@ -1,11 +1,11 @@
 import './App.css';
+import Greeting from
+ './Components/Greeting';
 
 function App() {
   return (
     <>
-      <h1>My first app</h1>
-      <p>Hello, React!!!</p>
-      <p>08-04-2023</p>
+      <Greeting />
     </>
   );
 }
