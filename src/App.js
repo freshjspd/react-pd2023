@@ -1,18 +1,6 @@
 import './App.css';
-import React, { Component } from 'react'
-import Greeting from './Components/Greeting';
-
-const users = [
-{
-  firstName: 'Tom',
-  lastName: 'Tomson'
-},
-{
-  firstName: 'Kate',
-  lastName: 'Tomson'
-},
-];
-
+import React, { Component } from 'react';
+import Counter from './Components/Counter';
 
 export default class App extends Component {
   constructor(props){ 
@@ -21,8 +9,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Greeting user={users[0]} isHello={false}/>
-        <Greeting user={users[1]} isHello={true}/>
+        <Counter step={5} />
+        <Counter step={100} />
       </>
     );
   }
