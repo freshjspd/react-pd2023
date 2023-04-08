@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Greeting.module.css';
 
 export class Greeting extends Component {
   constructor(props){ super(props); }
@@ -6,25 +7,12 @@ export class Greeting extends Component {
     const {firstName, lastName, email} = this.props.user;
     const {isOnline} = this.props;
     return (
-        <>
-            <h1>Hello, {firstName} {lastName} !!!</h1>
+        <div className={styles.card}>
+            <h1 className={styles.hello}>Hello, {firstName} {lastName} !!!</h1>
             <p>my email: {email}</p>
-            <p>online: {isOnline ? "yes" : "no"}</p>
-        </>
+            <p className={styles.net}>online: {isOnline ? "yes" : "no"}</p>
+        </div>
     )
   }
 }
 export default Greeting;
-/*
-import React from 'react'
-function Greeting() {
-  return (
-    <>
-      <h1>My first app</h1>
-      <p>Hello, React!!!</p>
-      <p>08-04-2023</p>
-    </>
-  );
-}
-export default Greeting;
-*/

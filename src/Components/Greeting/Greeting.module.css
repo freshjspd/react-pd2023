@@ -1,0 +1,15 @@
+.hello{
+    color: red;
+    font-weight: bold;
+}
+
+.net{
+    color: greenyellow;
+}
+
+.card{
+    border: 2px solid orange;
+    width: 400px;
+    height: 200px;
+    background-color: yellow;
+}
