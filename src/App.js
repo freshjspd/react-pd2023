@@ -1,11 +1,16 @@
 import './App.css';
 import Greeting from './Components/Greeting';
 
+const currentUser = {
+  firstName: 'John',
+  lastName: 'Adson',
+  email: 'john7@mail.com'
+};
+
 function App() {
   return (
     <>
-      <Greeting firstName={"John"} lastName={"Smith"}/>
-      <Greeting firstName={"Kate"} lastName={"Fox"}/>
+      <Greeting user={currentUser} isOnline={true}/>
     </>
   );
 }

@@ -3,10 +3,13 @@ import React, { Component } from 'react'
 export class Greeting extends Component {
   constructor(props){ super(props); }
   render() {
-    const {firstName, lastName} = this.props;
+    const {firstName, lastName, email} = this.props.user;
+    const {isOnline} = this.props;
     return (
         <>
             <h1>Hello, {firstName} {lastName} !!!</h1>
+            <p>my email: {email}</p>
+            <p>online: {isOnline ? "yes" : "no"}</p>
         </>
     )
   }
