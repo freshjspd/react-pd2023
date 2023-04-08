@@ -1,32 +1,17 @@
 import './App.css';
-import Greeting from './Components/Greeting';
+import Water from './Components/Water'
 import React, { Component } from 'react'
-
-const currentUser = {
-  firstName: 'John',
-  lastName: 'Adson',
-  email: 'john7@mail.com',
-  role: 'moderator'
-};
 
 export default class App extends Component {
   constructor(props){ 
     super(props); 
-    this.state = {
-      user: {
-        firstName:'anon', 
-        lastName:'anon'
-      },
-    };
-  }
-  load = () => {
-    this.setState({user: currentUser});
   }
   render() {
     return (
       <>
-        <button onClick={this.load}>load user</button>
-        <Greeting user={this.state.user}/>
+        <Water temperature={60}/>
+        <Water temperature={-5}/>
+        <Water temperature={100}/>
       </>
     );
   }
