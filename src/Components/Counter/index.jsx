@@ -2,21 +2,39 @@ import React, { Component } from 'react'
 
 export default class Counter extends Component {
   constructor(props) {
-    super(props);  
+    super(props); 
+    console.log('constructor'); 
     this.state = {
        value: 0,
     }
   }
   inc = () => {
+    console.log('fun inc');
     this.setState({value: this.state.value + this.props.step});
   }
   dec = () => {
+    console.log('fun dec');
     this.setState({value: this.state.value - this.props.step});
   }
   upd = () => {
+    console.log('fun upd');
     this.setState({value: 0});
   }
+
+  componentDidMount(){
+      console.log('component did mount');
+  }
+
+  componentDidUpdate(){
+      console.log('component did update');
+  }
+
+  componentWillUnmount(){
+    console.log('component will unmount');
+  }
+
   render() {
+    console.log('render');
     const {value} = this.state;
     return (
       <>
