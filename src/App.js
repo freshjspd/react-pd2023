@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import User from './Components/User';
+import Counter from './Components/Counter';
 
 export default class App extends Component {
   constructor(props){ 
@@ -23,6 +24,7 @@ export default class App extends Component {
     this.state;
     return (
       <>
+        <Counter step={10} />
         <User 
           name={name} 
           surname={surname} 
