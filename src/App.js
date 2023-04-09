@@ -1,28 +1,34 @@
 import './App.css';
 import React, { Component } from 'react';
-import ViewPortParams from './Components/ViewPortParams';
+import User from './Components/User';
 
 export default class App extends Component {
   constructor(props){ 
     super(props); 
     this.state = {
-      isVisible: false,
+        name: 'John',
+        surname: 'Adson',
+        age: 20,
+        isSelected: false,
     };
   }
 
-  handleClick = () => {
-    const {isVisible} = this.state;
-    this.setState({isVisible: !isVisible});
-  };
+  select = () => {
+    const {isSelected} = this.state;
+    this.setState({isSelected: !isSelected});
+  }
 
-  render() {
-    const {isVisible} = this.state;
+   render() {
+    const {name, surname, age, isSelected} = 
+    this.state;
     return (
       <>
-        <button onClick={this.handleClick}>
-          {isVisible ? 'Unmount' : 'Mount'}
-        </button>
-        {isVisible && <ViewPortParams/>}
+        <User 
+          name={name} 
+          surname={surname} 
+          age={age} 
+          isSelected = {isSelected}
+          select={this.select}/>
       </>
     );
   }
