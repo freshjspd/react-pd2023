@@ -13,12 +13,18 @@ export default class UserList extends Component {
     constructor(props) {
       super(props);
       this.state = {
-         users: db,
+         users: db.map(u => ({...u, isSelected: false})),
       }
     }
 
     makeCard = (u ,i) => {
-        return <Card key={i} user={u}/>
+        const select = () => {
+            const {users} = this.state;
+            const newUsers = [...users];
+            newUsers[i] = {...newUsers[i], isSelected: !newUsers[i].isSelected};
+            this.setState({users: newUsers});
+        }
+        return <Card key={i} user={u} select={select}/>
     }
 
     render() {

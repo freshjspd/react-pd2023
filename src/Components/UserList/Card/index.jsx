@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-
+import styles from './Card.module.css';
 export default class Card extends Component {
   render() {
-    const {name, surname} = this.props.user;
+    const {name, surname, isSelected} = this.props.user;
+    const {select} = this.props;
+    const selectedStyle = isSelected ? styles.selectedCard : null;
     return (
-      <li>
+      <li onClick={select} className={selectedStyle}>
         <p>{name} {surname}</p>
       </li>
     )
