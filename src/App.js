@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import Counter from './Components/Counter';
+import ViewPortParams from './Components/ViewPortParams';
 
 export default class App extends Component {
   constructor(props){ 
@@ -10,7 +10,7 @@ export default class App extends Component {
     };
   }
 
-  handleCounter = () => {
+  handleClick = () => {
     const {isVisible} = this.state;
     this.setState({isVisible: !isVisible});
   };
@@ -19,10 +19,10 @@ export default class App extends Component {
     const {isVisible} = this.state;
     return (
       <>
-        <button onClick={this.handleCounter}>
+        <button onClick={this.handleClick}>
           {isVisible ? 'Unmount' : 'Mount'}
         </button>
-        {isVisible && <Counter step={5}/>}
+        {isVisible && <ViewPortParams/>}
       </>
     );
   }
