@@ -1,0 +1,16 @@
+.clock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 400px;
+    background-color: black;
+    border: 5px solid green;
+}
+
+.digits{
+    font-size: 50px;
+    font-weight: bolder;
+    color: greenyellow;
+}
