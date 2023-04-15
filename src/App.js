@@ -1,12 +1,12 @@
 import './App.css';
 import React, { Component } from 'react';
-import Matrix from './Components/Matrix';
+import Stopwatch from './Components/Stopwatch';
 
 export default class App extends Component {
    render() {
     return (
       <>
-        <Matrix />        
+        <Stopwatch />        
       </>
     );
   }
