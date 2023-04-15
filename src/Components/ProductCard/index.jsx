@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './productCard.module.css';
 import stc from 'string-to-color';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 export class ProductCard extends Component {
   constructor(props){
@@ -21,7 +22,7 @@ export class ProductCard extends Component {
     const colorImgCon = {backgroundColor: color};
     console.log(name, price);
     return (
-        <div className={`${styles.card} ${selectedStyle}`} onClick={this.select}>
+        <div className = {classNames(styles.card,selectedStyle)} onClick={this.select}>
             <div className={styles.imgContainer} style={colorImgCon}>
                 <img src={imgSrc} />
             </div>
