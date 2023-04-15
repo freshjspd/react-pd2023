@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class SelectedUsers extends Component {
   render() {
-    const {users, setUsers} = this.props;
+    const {users} = this.props;
     const list = users.filter(u => u.isSelected);
     return (
       <>
