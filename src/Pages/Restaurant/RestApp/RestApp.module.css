@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+:root{
+    --primary-color: #fa4a0c;
+    --second-color: #252b42;
+    --text-color: #737373;
+    --primary-size-font: 16px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app{
+    background-color: silver;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 0 178px;
+}
+
+.app > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+     display: flex;
+     justify-content: center;
+}
+
+
+.appText{
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.1px;
+    color: white;
+}
+
+.appTitle{
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: white;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.appAbout{
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.2px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.btn{
+    border-radius: 30px;
+}
+
+.btn > p {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    line-height: 36px;
+    height: 68px;
+    width: 236px;
+    padding: 18px 0px;
+
+}
+
+.colorBtn{
+    background-color: var(--primary-color);
+    margin-right: 35px;
+}
+
+.transparentBtn{
+    background: none;
+    border: 1px solid white;
+}
