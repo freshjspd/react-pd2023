@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import CounterDisplayFun from './CounterDisplayFun';
 
 export default function CounterFun(props) {
     const {step, initialValue} = props;
@@ -9,12 +10,15 @@ export default function CounterFun(props) {
 
     const dec = () => { setValue(value - step); }
 
+    const valueHandler = (newValue) => {setValue(newValue);}
+
     return (
       <>
         <h1>Counter: {value}</h1>
         <p>step: {step}</p>
         <button onClick={inc}>+</button>
         <button onClick={dec}>-</button>
+        <CounterDisplayFun value={value} valueHandler={valueHandler} />
       </>
     )
 }
