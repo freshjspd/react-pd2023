@@ -7,7 +7,8 @@ export default class App extends Component {
    render() {
     return (
       <>
-        <Hello user={currentUser} />
+        <Hello user={currentUser} isHello={true}/>
+        <Hello user={currentUser} isHello={false}/>
       </>
     );
   }
