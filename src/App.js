@@ -1,11 +1,13 @@
 import './App.css';
 import React, { Component } from 'react';
-import SignIn from './Pages/SignIn';
+import Hello from "./Components/FunComponents/Hello";
+
+const currentUser = {firstName: 'John', lastName: 'Adson'};
 export default class App extends Component {
    render() {
     return (
       <>
-        <SignIn />
+        <Hello user={currentUser} />
       </>
     );
   }
