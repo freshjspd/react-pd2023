@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './RestApp.module.css';
+import styles from './BoardApp.module.css';
 import classNames from 'classnames';
 
-export default function RestApp(props) {
+export default function BoardApp(props) {
     const {info, btnInfoText, bcImg} = props;
     const backSection = {backgroundImage: `url(${bcImg})`};
     return(

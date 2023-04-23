@@ -1,9 +1,11 @@
 import React from 'react';
-import RestApp from './RestApp';
-import back1 from './RestApp/imgs/back1.png';
-import back2 from './RestApp/imgs/back2.png';
-
-
+import BoardApp from './BoardApp';
+import Mobile from './Mobile';
+import back1 from './BoardApp/imgs/back1.png';
+import back2 from './BoardApp/imgs/back2.png';
+import mob1 from './Mobile/imgs/mob1.png';
+import mob2 from './Mobile/imgs/mob2.png';
+import styles from './Restaurant.module.css';
 
 const restInfo = [
     'Restaurant app', 
@@ -33,14 +35,14 @@ const orderBtn = ['Paystore', 'Appstore'];
 export default function Restaurant(props) {
     return(
     <>
-        <RestApp info={restInfo} btnInfoText={restBtn} bcImg={back1}/>
-        <RestApp info={orderInfo} btnInfoText={orderBtn} bcImg={back2}/>
+        <BoardApp info={restInfo} btnInfoText={restBtn} bcImg={back1}/>
+        <section className={styles.container}>
+            <p>How the app works</p>
+            <Mobile imgMobile={mob1} info={mobInfo1} isImgFirst={true} />
+            <Mobile imgMobile={mob2} info={mobInfo2} isImgFirst={false} />
+        </section>
+        <BoardApp info={orderInfo} btnInfoText={orderBtn} bcImg={back2}/>
     </>);
 }
 
 
-/*
-<Mobile imgMobile={imgMobile} info={info} isImgFirst={true} />
-        <Mobile imgMobile={imgMobile} info={info} isImgFirst={false} />
-
-*/

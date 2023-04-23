@@ -4,6 +4,10 @@
     font-size: 16px;
 }
 
+body{
+    width: 100%;
+}
+
 :root{
     --primary-color: #fa4a0c;
     --second-color: #252b42;
@@ -12,7 +16,8 @@
 }
 
 .container{
-    max-width: 1200px;
+    /*max-width: 1200px;*/
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -79,7 +84,7 @@
     color: white;
     font-size: 24px;
     line-height: 36px;
-    height: 68px;
+    /*height: 68px;*/
     width: 236px;
     padding: 18px 0px;
 
