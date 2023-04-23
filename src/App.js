@@ -1,12 +1,12 @@
 import './App.css';
 import React, { Component } from 'react';
-import Restaurant from './Pages/Restaurant';
+import ClickComponent from './Components/FunComponents/ClickComponent';
 
 export default class App extends Component {
    render() {
     return (
       <>
-        <Restaurant />
+        <ClickComponent/>
       </>
     );
   }
