@@ -10,12 +10,7 @@ export default function Header(props) {
             <a href="#"> <img src={logo}/></a>
         </div>
         <nav className={styles.menu}>
-            <ul>
-                <li><a href="#">{info[0]}</a></li>
-                <li><a href="#">{info[1]}</a></li>
-                <li><a href="#">{info[2]}</a></li>
-                <li><a href="#">{info[3]}</a></li>
-            </ul>
+            <ul>{info.map(i => <li><a href="#">{i}</a></li>)}</ul>
         </nav>        
     </header>
   )
