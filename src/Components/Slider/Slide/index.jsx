@@ -11,8 +11,10 @@ button fullscreen
 import React from 'react'
 
 export default function Slide(props) {
-  const {images, currentImageId} = props;
+  const {images, currentImageId, width, height} = props;
   return (
-    <></>
+    <div>
+      <img src={images[currentImageId]} alt='photo' width={width} height={height}/>
+    </div>
   )
 }
