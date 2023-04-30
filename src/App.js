@@ -7,9 +7,13 @@ const options = {
   seed: 'pd2023'
 }
 
-function load({results, page, seed}){
-  fetch(`https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}`)
-  .then((response) => response.json())
+async function load({results, page, seed}){
+  await fetch(`https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}`)
+  .then((response) => {
+    console.log(response);
+    if(!response.ok) {throw new Error(response.statusText);}
+    return response.json();
+  })
   .then((data) => console.log(data.results))
   .catch((error) => console.log(error));
 }
