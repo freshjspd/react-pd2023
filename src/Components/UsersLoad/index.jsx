@@ -1,10 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
-const options = {
-    results: 10,
-    page: 1,
-    seed: 'pd2023'
-  }
+import {load} from '../../api';
 
 export default function UsersLoad(props) {
   const [users, setUsers] = useState([]);
@@ -19,21 +14,12 @@ export default function UsersLoad(props) {
     setCurrentPage(currentPage + 1);
   }
   
-  async function load({results, page, seed}){
-    setIsFetching(true);
-    await fetch(`https://randomuser.me/api/?results=${results}&seed={seed}&page=${page}`)
-    .then((response) => {
-      //console.log(response);
-      if(!response.ok) {throw new Error(response.statusText);}
-      return response.json();
-    })
-    .then((data) => setUsers(data.results))
-    .catch((error) => setIsError(true))
-    .finally(() => {setIsFetching(false)});
-  }
-
   useEffect(() => {
-    load(options);
+    setIsFetching(true);
+    load(currentPage)
+    .then(data => setUsers(data.results))
+    .catch((error) => setIsError(true))
+    .finally(() => setIsFetching(false))
   }, [currentPage] );
 
   return (
