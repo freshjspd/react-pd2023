@@ -16,10 +16,7 @@ export default function UsersLoad(props) {
   
   useEffect(() => {
     setIsFetching(true);
-    load(currentPage)
-    .then(data => setUsers(data.results))
-    .catch((error) => setIsError(true))
-    .finally(() => setIsFetching(false))
+    load(currentPage).then(data => setUsers(data.results)).catch((error) => setIsError(true)).finally(() => setIsFetching(false))
   }, [currentPage] );
 
   return (
