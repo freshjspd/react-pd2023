@@ -7,7 +7,7 @@ const reducer = (state, action) => {
     switch(action.type){
         case 'NEXT':  return {currentPage: state.currentPage + 1};
         case 'PREV': return {currentPage: state.currentPage - 1};
-        default: return {currentPage: state.currentPage};;
+        default: return {currentPage: state.currentPage};
     }
 }
 

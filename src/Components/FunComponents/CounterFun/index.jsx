@@ -1,34 +1,30 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import CounterDisplayFun from './CounterDisplayFun';
+import React, { useState, useReducer } from 'react';
+import { ThemeContext } from '../../../contexts';
+import styles from './CounterFun.module.css';
+
+const initialState = {value: 0};
+
+const reducer = (state, action) => {
+    switch(action.type){
+        case 'INC':  return {value: state.value + 1};
+        case 'DEC': return {value: state.value - 1};
+        default: return {value: state.value};
+    }
+}
 
 export default function CounterFun(props) {
-    const {step, initialValue} = props;
-    const [value, setValue] = useState(initialValue);
-
-    const inc = () => { setValue(value + step); }
-
-    const dec = () => { setValue(value - step); }
-
-    const valueHandler = (newValue) => {setValue(newValue);}
-
+  const [state, dispatch] = useReducer(reducer, initialState);
     return (
-      <>
-        <h1>Counter: {value}</h1>
-        <p>step: {step}</p>
-        <button onClick={inc}>+</button>
-        <button onClick={dec}>-</button>
-        <CounterDisplayFun value={value} valueHandler={valueHandler} />
-      </>
+      <ThemeContext.Consumer>
+        {theme => {
+          return(
+            <div>
+              <h1>Counter: {state.value}</h1>
+              <button onClick={() => dispatch({type:'INC'})}>+</button>
+              <button onClick={() => dispatch({type:'DEC'})}>-</button>
+            </div>
+          );}}
+      </ThemeContext.Consumer>
     )
 }
 
-CounterFun.propTypes = {
-    step: PropTypes.number,
-    initialValue: PropTypes.number
-}
-
-CounterFun.defaultProps = {
-    step: 1,
-    initialValue: 0
-}
