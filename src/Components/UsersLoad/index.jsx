@@ -3,7 +3,7 @@ import {load} from '../../api';
 
 export default function UsersLoad(props) {
   const [users, setUsers] = useState([]);
-  const [isFetching, setIsFetching] = useState(false); //isLoading
+  const [isFetching, setIsFetching] = useState(false); 
   const [isError, setIsError] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
