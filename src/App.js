@@ -2,21 +2,30 @@ import './App.css';
 import React, {useState} from 'react';
 import {LogoContext} from './contexts';
 import Home from './Pages/Home';
-
-const myLogo = {
-  name: 'FreshCode',
-  greeting: 'Hello! I am fullstask dev!!!',
-  url: 'https://freshcode.training/',
-  src: 'https://static.tildacdn.com/tild3338-3561-4361-a539-613663356437/logo.svg',
-}
+import Restaurant from './Pages/Restaurant';
+import SignIn from './Pages/SignIn';
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import {Switch} from 'react-router';
 
 function App(){
-  //const [logo, setLogo] = useState(myLogo);
-
   return(
-  <LogoContext.Provider value={myLogo}>
-    <Home/>
-  </LogoContext.Provider>
+    <>
+    <Router>
+      <ul>
+        <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/about'}>About</Link></li>
+        <li><Link to={'/contacts'}>Contacts</Link></li>
+        <li><Link to={'/products'}>Products</Link></li>
+      </ul>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/contancs" element={<SignIn />} />
+        <Route path="/products" element={<Restaurant/>} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+  </Router>
+  </>
   );
 }
 

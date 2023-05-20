@@ -1,0 +1,36 @@
+@use '../../App.module.scss';
+
+$card-width: 500px;
+$card-height: 150px;
+$img-size: 100px;
+
+.selectedCard{
+    border: 5px solid yellowgreen;
+}
+
+.card{
+    width: $card-width;
+    height: $card-height;
+    border-radius: 10px;
+    //@extend %flex-center;
+    @include flex-mix(space-around, center);
+    overflow: hidden;
+    background-color: lightcyan;
+    border: 1px solid black;
+
+    .imgContainer{
+        width: $img-size;
+        height: $img-size;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid black;
+        background-color: gray;
+        
+        & > img{
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+}
+
