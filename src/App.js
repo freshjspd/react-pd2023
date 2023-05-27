@@ -1,31 +1,17 @@
 import './App.css';
 import React, {useState} from 'react';
-import {LogoContext} from './contexts';
-import Home from './Pages/Home';
 import Restaurant from './Pages/Restaurant';
-import SignIn from './Pages/SignIn';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
-import {Switch} from 'react-router';
+import ProductCard from './Components/ProductCard';
+
+const car={
+  imgSrc: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRxvN2c1_UMwNaLopkDHPIoyLAsOi3Q_TvqgCkUvtUFmMD36TQFJQUXqgUX1HW6P7HTS8I3Wvl3Cz4rAfBj-NJfZhfbepTH&usqp=CAY',
+  name: 'Traxxas TRX-6 Mercedes-Benz G 63 AMG 6x6 Black',
+  price: 26946
+}
 
 function App(){
   return(
-    <>
-    <Router>
-      <ul>
-        <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/about'}>About</Link></li>
-        <li><Link to={'/contacts'}>Contacts</Link></li>
-        <li><Link to={'/products'}>Products</Link></li>
-      </ul>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/contancs" element={<SignIn />} />
-        <Route path="/products" element={<Restaurant/>} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
-  </Router>
-  </>
+    <Restaurant />
   );
 }
 

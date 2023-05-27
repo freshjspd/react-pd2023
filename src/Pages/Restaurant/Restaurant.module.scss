@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+$primary-color: #fa4a0c;
+$second-color: #252b42;
+$text-color: #737373;
+$primary-size-font: 16px;
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    & > p {
+        font-family: Poppins;
+        font-size: 44px;
+        font-weight: 600;
+        line-height: 36px;
+        letter-spacing: 0.1px;
+        text-align: center;
+        padding-top: 56px;
+    }
+}
+
+
